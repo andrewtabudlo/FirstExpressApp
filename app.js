@@ -7,14 +7,16 @@ app.get("/", function(req, res){
 
 
 app.get("/speak/:animal", function(req, res){
-    var animal = req.params.animal
-    if (animal == "pig"){
-        res.send("The pig says 'OINK'");
-    } else if (animal == "cow"){
-        res.send("The cow says 'Moo'")
-    } else if (animal == "dog") {
-        res.send("The dog says 'Woof Woof!'")
+    var sounds = {
+        pig: "Oink",
+        cow: "Moo",
+        dog: "Woof Woof",
+        cat: "I hate you human",
+        goldfish: "..."
     }
+    var animal = req.params.animal
+    var sound = sounds[animal]
+    res.send("The " + animal + " says " + sound);
 });
 
 app.get("/repeat/:word/:multiplier", function(req, res){
@@ -23,16 +25,7 @@ app.get("/repeat/:word/:multiplier", function(req, res){
     res.send(word.repeat(multiplier));
 });
 
-app.get("/r/:subredditName", function(req, res) {
-    var subreddit = req.params.subredditName;
-    res.send("WELCOME TO THE " + subreddit.toUpperCase() + " SUBREDDIT!");
-});
-
-app.get("/r/:subredditName/comments/:id/:title/", function(req, res){
-    res.send("WELCOME TO THE COMMENTS PAGE!");
-});
-
-app.get("*", (req, res) => res.send("YOU ARE A STAR!"));
+app.get("*", (req, res) => res.send("Sorry, could not find page."));
 
 // Tell Express to listen for request
 app.listen(3000, () => console.log('FirstExpressApp listening on port 3000!'));
