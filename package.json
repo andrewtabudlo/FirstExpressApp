@@ -1,0 +1,23 @@
+{
+  "name": "firstexpressapp",
+  "version": "1.0.0",
+  "description": "routing with express",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewtabudlo/FirstExpressApp.git"
+  },
+  "author": "Andrew Tabudlo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrewtabudlo/FirstExpressApp/issues"
+  },
+  "homepage": "https://github.com/andrewtabudlo/FirstExpressApp#readme"
+}
